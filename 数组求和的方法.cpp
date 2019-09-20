@@ -1,5 +1,5 @@
 class Solution {
-    /**
+    /*
      * @param nums: the given array
      * @param s: the given target
      * @return: the number of ways to assign symbols to make sum of integers equal to target S
