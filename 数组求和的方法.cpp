@@ -25,3 +25,22 @@ class Solution {
         }
     }
 };
+
+class Solution{
+    public:
+        int findTargetSumWays(vector<int> & sums,int s){
+            int n = sums.size();
+            if(n==0) return 0;
+            unordered_map<int,int> mp;
+            mp[0] = 1;
+            for(int i = 0;i<n;i++){
+                unordered_map<int,int> mpTmp;
+                for(auto&& kv:mp){
+                    mpTmp[kv.first + nums[i]] += kv.second;
+                    mpTmp[kv.first - nums[i]] -= kv.second;
+                }
+                mp = mpTmp;
+            }
+            return mp[s];
+        }
+}
